@@ -1,0 +1,2351 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Dark Archive</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=IBM+Plex+Mono:wght@400;500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              serif: ["Playfair Display", "serif"],
+              mono: ["IBM Plex Mono", "monospace"],
+              body: ["Lora", "serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .drop-cap::first-letter {
+        float: left;
+        font-family: "Playfair Display", serif;
+        font-size: 4.5rem;
+        line-height: 0.8;
+        padding-right: 0.75rem;
+        padding-top: 0.25rem;
+        color: #fef3c7;
+      }
+    </style>
+  </head>
+  <body class="bg-stone-950 text-stone-300 font-body leading-relaxed">
+    <!-- ==================== HEADER ==================== -->
+    <header
+      class="sticky top-0 z-50 bg-stone-950/90 backdrop-blur-md border-b border-stone-800"
+    >
+      <div
+        class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between"
+      >
+        <!-- Logo -->
+        <a
+          href="#"
+          class="font-serif text-2xl text-amber-50 tracking-wide hover:text-amber-500 transition-colors"
+        >
+          <span class="text-amber-600">§</span> The Archive
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a
+            href="#home"
+            class="font-mono text-xs tracking-widest uppercase text-stone-400 hover:text-amber-500 transition-colors border-b border-transparent hover:border-amber-500 pb-1"
+            >Home</a
+          >
+          <a
+            href="#writing"
+            class="font-mono text-xs tracking-widest uppercase text-stone-400 hover:text-amber-500 transition-colors border-b border-transparent hover:border-amber-500 pb-1"
+            >Writing</a
+          >
+          <a
+            href="#travel"
+            class="font-mono text-xs tracking-widest uppercase text-stone-400 hover:text-amber-500 transition-colors border-b border-transparent hover:border-amber-500 pb-1"
+            >Travel</a
+          >
+          <a
+            href="#photography"
+            class="font-mono text-xs tracking-widest uppercase text-stone-400 hover:text-amber-500 transition-colors border-b border-transparent hover:border-amber-500 pb-1"
+            >Photography</a
+          >
+          <a
+            href="#about"
+            class="font-mono text-xs tracking-widest uppercase text-stone-400 hover:text-amber-500 transition-colors border-b border-transparent hover:border-amber-500 pb-1"
+            >About</a
+          >
+          <a
+            href="#contact"
+            class="font-mono text-xs tracking-widest uppercase text-stone-400 hover:text-amber-500 transition-colors border-b border-transparent hover:border-amber-500 pb-1"
+            >Contact</a
+          >
+        </nav>
+
+        <!-- Auth Buttons -->
+        <div class="hidden md:flex items-center gap-4">
+          <a
+            href="#login"
+            class="font-mono text-xs tracking-widest uppercase text-amber-600 border border-amber-700 px-4 py-2 hover:bg-amber-700 hover:text-stone-950 transition-all"
+          >
+            Library Card
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button
+          class="md:hidden text-stone-400 hover:text-amber-500 transition-colors"
+        >
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <nav
+        class="md:hidden hidden border-t border-stone-800 px-4 py-4 space-y-3"
+      >
+        <a
+          href="#home"
+          class="block font-mono text-xs tracking-widest uppercase text-stone-400 hover:text-amber-500"
+          >Home</a
+        >
+        <a
+          href="#writing"
+          class="block font-mono text-xs tracking-widest uppercase text-stone-400 hover:text-amber-500"
+          >Writing</a
+        >
+        <a
+          href="#travel"
+          class="block font-mono text-xs tracking-widest uppercase text-stone-400 hover:text-amber-500"
+          >Travel</a
+        >
+        <a
+          href="#photography"
+          class="block font-mono text-xs tracking-widest uppercase text-stone-400 hover:text-amber-500"
+          >Photography</a
+        >
+        <a
+          href="#about"
+          class="block font-mono text-xs tracking-widest uppercase text-stone-400 hover:text-amber-500"
+          >About</a
+        >
+        <a
+          href="#contact"
+          class="block font-mono text-xs tracking-widest uppercase text-stone-400 hover:text-amber-500"
+          >Contact</a
+        >
+        <a
+          href="#login"
+          class="inline-block font-mono text-xs tracking-widest uppercase text-amber-600 border border-amber-700 px-4 py-2 mt-2"
+          >Library Card</a
+        >
+      </nav>
+    </header>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section id="home" class="relative py-24 md:py-32">
+      <div class="absolute inset-0 opacity-5">
+        <div
+          class="w-full h-full"
+          style="
+            background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23d97706&quot; fill-opacity=&quot;0.4&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+          "
+        ></div>
+      </div>
+      <div class="max-w-5xl mx-auto px-4 text-center relative">
+        <div class="mb-6">
+          <span
+            class="font-mono text-xs tracking-[0.3em] text-amber-600 uppercase"
+            >Welcome to</span
+          >
+        </div>
+        <h1
+          class="font-serif text-5xl md:text-7xl text-amber-50 mb-6 leading-tight"
+        >
+          The Digital Archive<br />
+          <span class="text-4xl md:text-5xl italic text-stone-400"
+            >of Sebastian Thorne</span
+          >
+        </h1>
+        <div class="flex items-center justify-center gap-4 mb-8">
+          <span class="w-16 h-px bg-amber-700"></span>
+          <span class="font-mono text-xs tracking-widest text-stone-500"
+            >EST. 2024</span
+          >
+          <span class="w-16 h-px bg-amber-700"></span>
+        </div>
+        <p
+          class="font-mono text-sm text-stone-500 tracking-wide max-w-xl mx-auto"
+        >
+          Exploring Philosophy, Code, and Art // A collection of writings,
+          photographs, and wanderings through time and thought.
+        </p>
+        <div class="mt-12 flex items-center justify-center gap-6">
+          <a
+            href="#latest"
+            class="inline-flex items-center gap-2 bg-amber-700 hover:bg-amber-600 text-stone-950 font-mono text-xs tracking-widest uppercase px-6 py-3 transition-colors"
+          >
+            <i data-lucide="book-open" class="w-4 h-4"></i>
+            Browse Archives
+          </a>
+          <a
+            href="#about"
+            class="inline-flex items-center gap-2 border border-stone-600 hover:border-amber-600 text-stone-300 hover:text-amber-500 font-mono text-xs tracking-widest uppercase px-6 py-3 transition-colors"
+          >
+            <i data-lucide="info" class="w-4 h-4"></i>
+            About
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== LATEST POSTS ==================== -->
+    <section id="latest" class="py-16 border-t border-stone-800">
+      <div class="max-w-5xl mx-auto px-4">
+        <div class="flex items-center justify-between mb-12">
+          <div>
+            <span
+              class="font-mono text-xs tracking-widest text-amber-600 uppercase"
+              >Recent Entries</span
+            >
+            <h2 class="font-serif text-3xl text-amber-50 mt-2">
+              Latest from the Archive
+            </h2>
+          </div>
+          <a
+            href="#"
+            class="hidden md:inline-flex items-center gap-2 font-mono text-xs tracking-widest text-stone-400 hover:text-amber-500 transition-colors"
+          >
+            View All <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- Post Card 1 -->
+          <article
+            class="bg-stone-900 border border-stone-800 group hover:border-amber-700/50 transition-colors"
+          >
+            <div class="overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=600&h=400&fit=crop"
+                alt="Old library"
+                class="w-full h-48 object-cover sepia-[.25] opacity-80 group-hover:opacity-100 group-hover:sepia-0 transition-all duration-500"
+              />
+            </div>
+            <div class="p-5">
+              <div
+                class="font-mono text-[10px] tracking-[0.2em] text-stone-500 uppercase mb-3"
+              >
+                Nov 24 • Writing
+              </div>
+              <h3
+                class="font-serif text-lg text-amber-50 mb-3 group-hover:text-amber-500 transition-colors"
+              >
+                On the Nature of Forgotten Knowledge
+              </h3>
+              <p class="text-sm text-stone-400 mb-4 line-clamp-2">
+                What happens when entire libraries of wisdom slip through the
+                cracks of history? An exploration of lost texts.
+              </p>
+              <a
+                href="#single-post"
+                class="inline-flex items-center gap-2 font-mono text-xs text-amber-600 hover:text-amber-500 transition-colors"
+              >
+                Read Entry <i data-lucide="arrow-right" class="w-3 h-3"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Post Card 2 -->
+          <article
+            class="bg-stone-900 border border-stone-800 group hover:border-amber-700/50 transition-colors"
+          >
+            <div class="overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&h=400&fit=crop"
+                alt="Misty landscape"
+                class="w-full h-48 object-cover sepia-[.25] opacity-80 group-hover:opacity-100 group-hover:sepia-0 transition-all duration-500"
+              />
+            </div>
+            <div class="p-5">
+              <div
+                class="font-mono text-[10px] tracking-[0.2em] text-stone-500 uppercase mb-3"
+              >
+                Nov 18 • Travel
+              </div>
+              <h3
+                class="font-serif text-lg text-amber-50 mb-3 group-hover:text-amber-500 transition-colors"
+              >
+                Wandering Through the Scottish Highlands
+              </h3>
+              <p class="text-sm text-stone-400 mb-4 line-clamp-2">
+                Mist-covered hills and ancient stone circles. A journey through
+                time itself in the rugged beauty of Scotland.
+              </p>
+              <a
+                href="#single-post"
+                class="inline-flex items-center gap-2 font-mono text-xs text-amber-600 hover:text-amber-500 transition-colors"
+              >
+                Read Entry <i data-lucide="arrow-right" class="w-3 h-3"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Post Card 3 -->
+          <article
+            class="bg-stone-900 border border-stone-800 group hover:border-amber-700/50 transition-colors"
+          >
+            <div class="overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1505682634904-d7c8d95cdc50?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Vintage typewriter"
+                class="w-full h-48 object-cover sepia-[.25] opacity-80 group-hover:opacity-100 group-hover:sepia-0 transition-all duration-500"
+              />
+            </div>
+            <div class="p-5">
+              <div
+                class="font-mono text-[10px] tracking-[0.2em] text-stone-500 uppercase mb-3"
+              >
+                Nov 12 • Philosophy
+              </div>
+              <h3
+                class="font-serif text-lg text-amber-50 mb-3 group-hover:text-amber-500 transition-colors"
+              >
+                The Mechanics of Creative Thought
+              </h3>
+              <p class="text-sm text-stone-400 mb-4 line-clamp-2">
+                Examining the intersection of tools and ideas. How the
+                typewriter shaped a century of literary thought.
+              </p>
+              <a
+                href="#single-post"
+                class="inline-flex items-center gap-2 font-mono text-xs text-amber-600 hover:text-amber-500 transition-colors"
+              >
+                Read Entry <i data-lucide="arrow-right" class="w-3 h-3"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FEATURED SECTIONS STRIP ==================== -->
+    <section class="py-16 border-t border-stone-800">
+      <div class="max-w-5xl mx-auto px-4">
+        <div class="mb-12 text-center">
+          <span
+            class="font-mono text-xs tracking-widest text-amber-600 uppercase"
+            >Collections</span
+          >
+          <h2 class="font-serif text-3xl text-amber-50 mt-2">
+            Browse by Archive
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-4">
+          <!-- Writing Section -->
+          <a
+            href="#writing"
+            class="group relative overflow-hidden border border-stone-800 hover:border-amber-700 transition-colors"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/80 to-transparent z-10"
+            ></div>
+            <img
+              src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=400&h=500&fit=crop"
+              alt="Writing"
+              class="w-full h-64 object-cover sepia-[.35] opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-500"
+            />
+            <div class="absolute bottom-0 left-0 right-0 p-6 z-20">
+              <div class="flex items-center gap-2 mb-2">
+                <i data-lucide="pen-tool" class="w-4 h-4 text-amber-600"></i>
+                <span
+                  class="font-mono text-[10px] tracking-[0.2em] text-stone-500 uppercase"
+                  >24 Entries</span
+                >
+              </div>
+              <h3
+                class="font-serif text-2xl text-amber-50 group-hover:text-amber-500 transition-colors"
+              >
+                Writing
+              </h3>
+              <p class="text-sm text-stone-400 mt-2">
+                Essays, reflections, and literary explorations
+              </p>
+            </div>
+          </a>
+
+          <!-- Travel Section -->
+          <a
+            href="#travel"
+            class="group relative overflow-hidden border border-stone-800 hover:border-amber-700 transition-colors"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/80 to-transparent z-10"
+            ></div>
+            <img
+              src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&h=500&fit=crop"
+              alt="Travel"
+              class="w-full h-64 object-cover sepia-[.35] opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-500"
+            />
+            <div class="absolute bottom-0 left-0 right-0 p-6 z-20">
+              <div class="flex items-center gap-2 mb-2">
+                <i data-lucide="compass" class="w-4 h-4 text-amber-600"></i>
+                <span
+                  class="font-mono text-[10px] tracking-[0.2em] text-stone-500 uppercase"
+                  >18 Entries</span
+                >
+              </div>
+              <h3
+                class="font-serif text-2xl text-amber-50 group-hover:text-amber-500 transition-colors"
+              >
+                Travel Logs
+              </h3>
+              <p class="text-sm text-stone-400 mt-2">
+                Journeys through landscapes and cultures
+              </p>
+            </div>
+          </a>
+
+          <!-- Photography Section -->
+          <a
+            href="#photography"
+            class="group relative overflow-hidden border border-stone-800 hover:border-amber-700 transition-colors"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/80 to-transparent z-10"
+            ></div>
+            <img
+              src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=400&h=500&fit=crop"
+              alt="Photography"
+              class="w-full h-64 object-cover sepia-[.35] opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-500"
+            />
+            <div class="absolute bottom-0 left-0 right-0 p-6 z-20">
+              <div class="flex items-center gap-2 mb-2">
+                <i data-lucide="camera" class="w-4 h-4 text-amber-600"></i>
+                <span
+                  class="font-mono text-[10px] tracking-[0.2em] text-stone-500 uppercase"
+                  >42 Images</span
+                >
+              </div>
+              <h3
+                class="font-serif text-2xl text-amber-50 group-hover:text-amber-500 transition-colors"
+              >
+                Photography
+              </h3>
+              <p class="text-sm text-stone-400 mt-2">
+                Visual documentation and artistic captures
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CATEGORY PAGE: TRAVEL ==================== -->
+    <section id="travel" class="py-16 border-t border-stone-800">
+      <div class="max-w-5xl mx-auto px-4">
+        <!-- Category Header -->
+        <div class="text-center mb-12">
+          <span
+            class="font-mono text-xs tracking-widest text-amber-600 uppercase"
+            >Archive Section</span
+          >
+          <h1 class="font-serif text-5xl text-amber-50 mt-4 mb-6">
+            TRAVEL LOGS
+          </h1>
+          <div class="flex items-center justify-center gap-4">
+            <span class="w-24 h-px bg-stone-700"></span>
+            <i data-lucide="compass" class="w-5 h-5 text-amber-600"></i>
+            <span class="w-24 h-px bg-stone-700"></span>
+          </div>
+          <p class="font-body text-stone-400 mt-6 max-w-2xl mx-auto">
+            Chronicles of wandering through ancient cities, forgotten paths, and
+            landscapes that whisper stories of ages past.
+          </p>
+        </div>
+
+        <!-- Posts Grid -->
+        <div class="grid md:grid-cols-2 gap-6 mb-12">
+          <!-- Travel Post 1 -->
+          <article
+            class="bg-stone-900 border border-stone-800 group hover:border-amber-700/50 transition-colors flex"
+          >
+            <div class="w-1/3 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1520939817895-060bdaf4fe1b?w=300&h=400&fit=crop"
+                alt="Prague architecture"
+                class="w-full h-full object-cover sepia-[.25] opacity-80 group-hover:opacity-100 transition-all duration-500"
+              />
+            </div>
+            <div class="w-2/3 p-5 flex flex-col">
+              <div
+                class="font-mono text-[10px] tracking-[0.2em] text-stone-500 uppercase mb-2"
+              >
+                Oct 28 • Central Europe
+              </div>
+              <h3
+                class="font-serif text-lg text-amber-50 mb-2 group-hover:text-amber-500 transition-colors"
+              >
+                Gothic Shadows of Prague
+              </h3>
+              <p class="text-sm text-stone-400 mb-4 flex-grow line-clamp-3">
+                Walking the cobblestone streets where alchemists once sought the
+                philosopher's stone.
+              </p>
+              <a
+                href="#single-post"
+                class="inline-flex items-center gap-2 font-mono text-xs text-amber-600 hover:text-amber-500 transition-colors"
+              >
+                Read Entry <i data-lucide="arrow-right" class="w-3 h-3"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Travel Post 2 -->
+          <article
+            class="bg-stone-900 border border-stone-800 group hover:border-amber-700/50 transition-colors flex"
+          >
+            <div class="w-1/3 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=300&h=400&fit=crop"
+                alt="Italian coast"
+                class="w-full h-full object-cover sepia-[.25] opacity-80 group-hover:opacity-100 transition-all duration-500"
+              />
+            </div>
+            <div class="w-2/3 p-5 flex flex-col">
+              <div
+                class="font-mono text-[10px] tracking-[0.2em] text-stone-500 uppercase mb-2"
+              >
+                Oct 15 • Italy
+              </div>
+              <h3
+                class="font-serif text-lg text-amber-50 mb-2 group-hover:text-amber-500 transition-colors"
+              >
+                The Cinque Terre by Twilight
+              </h3>
+              <p class="text-sm text-stone-400 mb-4 flex-grow line-clamp-3">
+                Ancient fishing villages painted in ochre and rust, clinging to
+                the Mediterranean cliffs.
+              </p>
+              <a
+                href="#single-post"
+                class="inline-flex items-center gap-2 font-mono text-xs text-amber-600 hover:text-amber-500 transition-colors"
+              >
+                Read Entry <i data-lucide="arrow-right" class="w-3 h-3"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Travel Post 3 -->
+          <article
+            class="bg-stone-900 border border-stone-800 group hover:border-amber-700/50 transition-colors flex"
+          >
+            <div class="w-1/3 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=300&h=400&fit=crop"
+                alt="Japanese temple"
+                class="w-full h-full object-cover sepia-[.25] opacity-80 group-hover:opacity-100 transition-all duration-500"
+              />
+            </div>
+            <div class="w-2/3 p-5 flex flex-col">
+              <div
+                class="font-mono text-[10px] tracking-[0.2em] text-stone-500 uppercase mb-2"
+              >
+                Sep 22 • Japan
+              </div>
+              <h3
+                class="font-serif text-lg text-amber-50 mb-2 group-hover:text-amber-500 transition-colors"
+              >
+                Silence in the Bamboo Groves of Kyoto
+              </h3>
+              <p class="text-sm text-stone-400 mb-4 flex-grow line-clamp-3">
+                Finding meditation in the rustle of ancient bamboo forests
+                surrounding forgotten temples.
+              </p>
+              <a
+                href="#single-post"
+                class="inline-flex items-center gap-2 font-mono text-xs text-amber-600 hover:text-amber-500 transition-colors"
+              >
+                Read Entry <i data-lucide="arrow-right" class="w-3 h-3"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Travel Post 4 -->
+          <article
+            class="bg-stone-900 border border-stone-800 group hover:border-amber-700/50 transition-colors flex"
+          >
+            <div class="w-1/3 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1549144511-f099e773c147?w=300&h=400&fit=crop"
+                alt="Paris streets"
+                class="w-full h-full object-cover sepia-[.25] opacity-80 group-hover:opacity-100 transition-all duration-500"
+              />
+            </div>
+            <div class="w-2/3 p-5 flex flex-col">
+              <div
+                class="font-mono text-[10px] tracking-[0.2em] text-stone-500 uppercase mb-2"
+              >
+                Sep 08 • France
+              </div>
+              <h3
+                class="font-serif text-lg text-amber-50 mb-2 group-hover:text-amber-500 transition-colors"
+              >
+                The Hidden Bookshops of the Left Bank
+              </h3>
+              <p class="text-sm text-stone-400 mb-4 flex-grow line-clamp-3">
+                Exploring the dusty shelves where Hemingway and Fitzgerald once
+                searched for inspiration.
+              </p>
+              <a
+                href="#single-post"
+                class="inline-flex items-center gap-2 font-mono text-xs text-amber-600 hover:text-amber-500 transition-colors"
+              >
+                Read Entry <i data-lucide="arrow-right" class="w-3 h-3"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Pagination -->
+        <nav class="flex items-center justify-center gap-4">
+          <a
+            href="#"
+            class="font-mono text-xs text-stone-500 hover:text-amber-500 transition-colors flex items-center gap-1"
+          >
+            <i data-lucide="chevron-left" class="w-4 h-4"></i> Prev
+          </a>
+          <div class="flex items-center gap-2">
+            <span
+              class="font-mono text-xs text-amber-600 border border-amber-700 px-3 py-1"
+              >1</span
+            >
+            <span
+              class="font-mono text-xs text-stone-500 hover:text-amber-500 cursor-pointer px-3 py-1"
+              >2</span
+            >
+            <span
+              class="font-mono text-xs text-stone-500 hover:text-amber-500 cursor-pointer px-3 py-1"
+              >3</span
+            >
+            <span class="font-mono text-xs text-stone-600">...</span>
+            <span
+              class="font-mono text-xs text-stone-500 hover:text-amber-500 cursor-pointer px-3 py-1"
+              >12</span
+            >
+          </div>
+          <a
+            href="#"
+            class="font-mono text-xs text-stone-500 hover:text-amber-500 transition-colors flex items-center gap-1"
+          >
+            Next <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ==================== PHOTOGRAPHY PAGE ==================== -->
+    <section id="photography" class="py-16 border-t border-stone-800">
+      <div class="max-w-5xl mx-auto px-4">
+        <!-- Category Header -->
+        <div class="text-center mb-12">
+          <span
+            class="font-mono text-xs tracking-widest text-amber-600 uppercase"
+            >Visual Archive</span
+          >
+          <h1 class="font-serif text-5xl text-amber-50 mt-4 mb-6">
+            PHOTOGRAPHY
+          </h1>
+          <div class="flex items-center justify-center gap-4">
+            <span class="w-24 h-px bg-stone-700"></span>
+            <i data-lucide="aperture" class="w-5 h-5 text-amber-600"></i>
+            <span class="w-24 h-px bg-stone-700"></span>
+          </div>
+        </div>
+
+        <!-- Masonry Grid -->
+        <div class="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4">
+          <!-- Photo 1 -->
+          <figure class="break-inside-avoid group relative">
+            <div class="p-2 bg-stone-800 border border-stone-700">
+              <img
+                src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=500&fit=crop"
+                alt="Ancient library"
+                class="w-full sepia-[.15] group-hover:sepia-0 transition-all duration-500"
+              />
+              <figcaption
+                class="opacity-0 group-hover:opacity-100 absolute bottom-4 left-4 right-4 bg-stone-950/90 p-3 transition-opacity duration-300"
+              >
+                <span
+                  class="font-mono text-[10px] text-amber-600 tracking-wider"
+                  >Fig. 1</span
+                >
+                <p class="font-mono text-xs text-stone-300 mt-1">
+                  Trinity College Library, Dublin
+                </p>
+              </figcaption>
+            </div>
+          </figure>
+
+          <!-- Photo 2 -->
+          <figure class="break-inside-avoid group relative">
+            <div class="p-2 bg-stone-800 border border-stone-700">
+              <img
+                src="https://images.unsplash.com/photo-1476362555312-ab9e108a0b7e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Foggy forest"
+                class="w-full sepia-[.15] group-hover:sepia-0 transition-all duration-500"
+              />
+              <figcaption
+                class="opacity-0 group-hover:opacity-100 absolute bottom-4 left-4 right-4 bg-stone-950/90 p-3 transition-opacity duration-300"
+              >
+                <span
+                  class="font-mono text-[10px] text-amber-600 tracking-wider"
+                  >Fig. 2</span
+                >
+                <p class="font-mono text-xs text-stone-300 mt-1">
+                  Black Forest, Germany
+                </p>
+              </figcaption>
+            </div>
+          </figure>
+
+          <!-- Photo 3 -->
+          <figure class="break-inside-avoid group relative">
+            <div class="p-2 bg-stone-800 border border-stone-700">
+              <img
+                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=600&fit=crop"
+                alt="Gothic architecture"
+                class="w-full sepia-[.15] group-hover:sepia-0 transition-all duration-500"
+              />
+              <figcaption
+                class="opacity-0 group-hover:opacity-100 absolute bottom-4 left-4 right-4 bg-stone-950/90 p-3 transition-opacity duration-300"
+              >
+                <span
+                  class="font-mono text-[10px] text-amber-600 tracking-wider"
+                  >Fig. 3</span
+                >
+                <p class="font-mono text-xs text-stone-300 mt-1">
+                  Notre-Dame Cathedral, Paris
+                </p>
+              </figcaption>
+            </div>
+          </figure>
+
+          <!-- Photo 4 -->
+          <figure class="break-inside-avoid group relative">
+            <div class="p-2 bg-stone-800 border border-stone-700">
+              <img
+                src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&h=400&fit=crop"
+                alt="Old books"
+                class="w-full sepia-[.15] group-hover:sepia-0 transition-all duration-500"
+              />
+              <figcaption
+                class="opacity-0 group-hover:opacity-100 absolute bottom-4 left-4 right-4 bg-stone-950/90 p-3 transition-opacity duration-300"
+              >
+                <span
+                  class="font-mono text-[10px] text-amber-600 tracking-wider"
+                  >Fig. 4</span
+                >
+                <p class="font-mono text-xs text-stone-300 mt-1">
+                  Antiquarian Collection, Oxford
+                </p>
+              </figcaption>
+            </div>
+          </figure>
+
+          <!-- Photo 5 -->
+          <figure class="break-inside-avoid group relative">
+            <div class="p-2 bg-stone-800 border border-stone-700">
+              <img
+                src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=350&fit=crop"
+                alt="Mountain landscape"
+                class="w-full sepia-[.15] group-hover:sepia-0 transition-all duration-500"
+              />
+              <figcaption
+                class="opacity-0 group-hover:opacity-100 absolute bottom-4 left-4 right-4 bg-stone-950/90 p-3 transition-opacity duration-300"
+              >
+                <span
+                  class="font-mono text-[10px] text-amber-600 tracking-wider"
+                  >Fig. 5</span
+                >
+                <p class="font-mono text-xs text-stone-300 mt-1">
+                  Swiss Alps at Dawn
+                </p>
+              </figcaption>
+            </div>
+          </figure>
+
+          <!-- Photo 6 -->
+          <figure class="break-inside-avoid group relative">
+            <div class="p-2 bg-stone-800 border border-stone-700">
+              <img
+                src="https://images.unsplash.com/photo-1505682634904-d7c8d95cdc50?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Vintage typewriter"
+                class="w-full sepia-[.15] group-hover:sepia-0 transition-all duration-500"
+              />
+              <figcaption
+                class="opacity-0 group-hover:opacity-100 absolute bottom-4 left-4 right-4 bg-stone-950/90 p-3 transition-opacity duration-300"
+              >
+                <span
+                  class="font-mono text-[10px] text-amber-600 tracking-wider"
+                  >Fig. 6</span
+                >
+                <p class="font-mono text-xs text-stone-300 mt-1">
+                  Underwood No. 5, 1923
+                </p>
+              </figcaption>
+            </div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== WRITING SECTION ==================== -->
+    <section id="writing" class="py-16 border-t border-stone-800">
+      <div class="max-w-5xl mx-auto px-4">
+        <!-- Category Header -->
+        <div class="text-center mb-12">
+          <span
+            class="font-mono text-xs tracking-widest text-amber-600 uppercase"
+            >Archive Section</span
+          >
+          <h1 class="font-serif text-5xl text-amber-50 mt-4 mb-6">WRITING</h1>
+          <div class="flex items-center justify-center gap-4">
+            <span class="w-24 h-px bg-stone-700"></span>
+            <i data-lucide="pen-tool" class="w-5 h-5 text-amber-600"></i>
+            <span class="w-24 h-px bg-stone-700"></span>
+          </div>
+          <p class="font-body text-stone-400 mt-6 max-w-2xl mx-auto">
+            Essays, reflections, and literary explorations on philosophy,
+            literature, and the human condition. A collection of thoughts
+            preserved in digital ink.
+          </p>
+        </div>
+
+        <!-- Posts Grid -->
+        <div class="grid md:grid-cols-2 gap-6 mb-12">
+          <!-- Writing Post 1 -->
+          <article
+            class="bg-stone-900 border border-stone-800 group hover:border-amber-700/50 transition-colors flex"
+          >
+            <div class="w-1/3 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=300&h=400&fit=crop"
+                alt="Books and candle"
+                class="w-full h-full object-cover sepia-[.25] opacity-80 group-hover:opacity-100 transition-all duration-500"
+              />
+            </div>
+            <div class="w-2/3 p-5 flex flex-col">
+              <div
+                class="font-mono text-[10px] tracking-[0.2em] text-stone-500 uppercase mb-2"
+              >
+                Nov 20 • Essay
+              </div>
+              <h3
+                class="font-serif text-lg text-amber-50 mb-2 group-hover:text-amber-500 transition-colors"
+              >
+                The Consolation of Old Books
+              </h3>
+              <p class="text-sm text-stone-400 mb-4 flex-grow line-clamp-3">
+                On the peculiar comfort of holding volumes that have outlived
+                their original owners, carrying the fingerprints of centuries.
+              </p>
+              <a
+                href="#single-post"
+                class="inline-flex items-center gap-2 font-mono text-xs text-amber-600 hover:text-amber-500 transition-colors"
+              >
+                Read Entry <i data-lucide="arrow-right" class="w-3 h-3"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Writing Post 2 -->
+          <article
+            class="bg-stone-900 border border-stone-800 group hover:border-amber-700/50 transition-colors flex"
+          >
+            <div class="w-1/3 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1532012197267-da84d127e765?w=300&h=400&fit=crop"
+                alt="Open notebook"
+                class="w-full h-full object-cover sepia-[.25] opacity-80 group-hover:opacity-100 transition-all duration-500"
+              />
+            </div>
+            <div class="w-2/3 p-5 flex flex-col">
+              <div
+                class="font-mono text-[10px] tracking-[0.2em] text-stone-500 uppercase mb-2"
+              >
+                Nov 14 • Reflection
+              </div>
+              <h3
+                class="font-serif text-lg text-amber-50 mb-2 group-hover:text-amber-500 transition-colors"
+              >
+                Letters to No One
+              </h3>
+              <p class="text-sm text-stone-400 mb-4 flex-grow line-clamp-3">
+                The dying art of letter writing and why putting pen to paper
+                remains an act of profound intimacy.
+              </p>
+              <a
+                href="#single-post"
+                class="inline-flex items-center gap-2 font-mono text-xs text-amber-600 hover:text-amber-500 transition-colors"
+              >
+                Read Entry <i data-lucide="arrow-right" class="w-3 h-3"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Writing Post 3 -->
+          <article
+            class="bg-stone-900 border border-stone-800 group hover:border-amber-700/50 transition-colors flex"
+          >
+            <div class="w-1/3 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=300&h=400&fit=crop"
+                alt="Inkwell and quill"
+                class="w-full h-full object-cover sepia-[.25] opacity-80 group-hover:opacity-100 transition-all duration-500"
+              />
+            </div>
+            <div class="w-2/3 p-5 flex flex-col">
+              <div
+                class="font-mono text-[10px] tracking-[0.2em] text-stone-500 uppercase mb-2"
+              >
+                Nov 08 • Philosophy
+              </div>
+              <h3
+                class="font-serif text-lg text-amber-50 mb-2 group-hover:text-amber-500 transition-colors"
+              >
+                Stoicism in the Digital Age
+              </h3>
+              <p class="text-sm text-stone-400 mb-4 flex-grow line-clamp-3">
+                How ancient wisdom helps navigate the chaos of modern
+                connectivity, endless notifications, and digital noise.
+              </p>
+              <a
+                href="#single-post"
+                class="inline-flex items-center gap-2 font-mono text-xs text-amber-600 hover:text-amber-500 transition-colors"
+              >
+                Read Entry <i data-lucide="arrow-right" class="w-3 h-3"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Writing Post 4 -->
+          <article
+            class="bg-stone-900 border border-stone-800 group hover:border-amber-700/50 transition-colors flex"
+          >
+            <div class="w-1/3 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1474366521946-c3d4b507abf2?w=300&h=400&fit=crop"
+                alt="Reading by window"
+                class="w-full h-full object-cover sepia-[.25] opacity-80 group-hover:opacity-100 transition-all duration-500"
+              />
+            </div>
+            <div class="w-2/3 p-5 flex flex-col">
+              <div
+                class="font-mono text-[10px] tracking-[0.2em] text-stone-500 uppercase mb-2"
+              >
+                Nov 02 • Literature
+              </div>
+              <h3
+                class="font-serif text-lg text-amber-50 mb-2 group-hover:text-amber-500 transition-colors"
+              >
+                Rereading the Romantics
+              </h3>
+              <p class="text-sm text-stone-400 mb-4 flex-grow line-clamp-3">
+                Returning to Keats and Shelley after a decade. How time changes
+                what we find in familiar verses.
+              </p>
+              <a
+                href="#single-post"
+                class="inline-flex items-center gap-2 font-mono text-xs text-amber-600 hover:text-amber-500 transition-colors"
+              >
+                Read Entry <i data-lucide="arrow-right" class="w-3 h-3"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Pagination -->
+        <nav class="flex items-center justify-center gap-4">
+          <a
+            href="#"
+            class="font-mono text-xs text-stone-500 hover:text-amber-500 transition-colors flex items-center gap-1"
+          >
+            <i data-lucide="chevron-left" class="w-4 h-4"></i> Prev
+          </a>
+          <div class="flex items-center gap-2">
+            <span
+              class="font-mono text-xs text-amber-600 border border-amber-700 px-3 py-1"
+              >1</span
+            >
+            <span
+              class="font-mono text-xs text-stone-500 hover:text-amber-500 cursor-pointer px-3 py-1"
+              >2</span
+            >
+            <span
+              class="font-mono text-xs text-stone-500 hover:text-amber-500 cursor-pointer px-3 py-1"
+              >3</span
+            >
+            <span class="font-mono text-xs text-stone-600">...</span>
+            <span
+              class="font-mono text-xs text-stone-500 hover:text-amber-500 cursor-pointer px-3 py-1"
+              >8</span
+            >
+          </div>
+          <a
+            href="#"
+            class="font-mono text-xs text-stone-500 hover:text-amber-500 transition-colors flex items-center gap-1"
+          >
+            Next <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ==================== SINGLE POST LAYOUT ==================== -->
+    <section id="single-post" class="py-16 border-t border-stone-800">
+      <article class="max-w-3xl mx-auto px-4">
+        <!-- Post Header -->
+        <header class="text-center mb-12">
+          <div class="mb-6">
+            <span
+              class="inline-block font-mono text-[10px] tracking-[0.2em] text-amber-600 uppercase border border-amber-700 px-3 py-1"
+              >Philosophy</span
+            >
+          </div>
+          <h1
+            class="font-serif text-4xl md:text-5xl text-amber-50 leading-tight mb-6"
+          >
+            On the Nature of Forgotten Knowledge
+          </h1>
+          <div
+            class="flex items-center justify-center gap-4 font-mono text-xs text-stone-500"
+          >
+            <span>November 24, 2024</span>
+            <span class="text-stone-700">|</span>
+            <span>8 min read</span>
+            <span class="text-stone-700">|</span>
+            <span>Sebastian Thorne</span>
+          </div>
+        </header>
+
+        <!-- Featured Image -->
+        <figure class="mb-12">
+          <img
+            src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=1200&h=600&fit=crop"
+            alt="Ancient manuscripts"
+            class="w-full sepia-[.2] opacity-90"
+          />
+          <figcaption class="font-mono text-xs text-stone-500 mt-3 text-center">
+            Fig. 1: The Hall of Lost Manuscripts, Vatican Archives
+          </figcaption>
+        </figure>
+
+        <!-- Post Content -->
+        <div class="prose prose-invert max-w-none">
+          <p class="drop-cap text-lg text-stone-300 leading-relaxed mb-6">
+            Throughout history, countless libraries have burned, manuscripts
+            have crumbled, and oral traditions have faded into silence. The
+            Library of Alexandria, that legendary repository of ancient wisdom,
+            stands as the most famous casualty in our collective memory—yet it
+            represents merely the tip of an iceberg of incalculable loss.
+          </p>
+
+          <p class="text-stone-300 leading-relaxed mb-6">
+            What does it mean when entire philosophies vanish from human
+            consciousness? When the thoughts that occupied the greatest minds of
+            antiquity dissolve into the dust of their parchments? We are left to
+            reconstruct shadows, to interpret fragments, to imagine whole
+            cosmologies from the surviving sentences of lost treatises.
+          </p>
+
+          <h2 class="font-serif text-2xl text-amber-50 mt-10 mb-4">
+            The Weight of Absence
+          </h2>
+
+          <p class="text-stone-300 leading-relaxed mb-6">
+            Consider the works of Aristotle that we possess—they are, scholars
+            believe, merely his lecture notes. His polished, literary dialogues,
+            praised in antiquity as masterpieces rivaling Plato's, have vanished
+            entirely. We teach his surviving corpus as though it were the whole,
+            forgetting that what remains might be the footnotes to his true
+            genius.
+          </p>
+
+          <blockquote
+            class="border-l-4 border-amber-700 pl-6 my-8 italic text-stone-400"
+          >
+            "The greatest tragedy is not the burning of libraries, but the
+            forgetting of what was lost within them. For when we forget that we
+            have forgotten, the absence becomes invisible, and we mistake our
+            poverty for completeness."
+            <footer class="font-mono text-xs text-stone-500 mt-2 not-italic">
+              — Marcus Aurelius Corvinus, <cite>Meditations on Loss</cite>
+            </footer>
+          </blockquote>
+
+          <p class="text-stone-300 leading-relaxed mb-6">
+            The medieval monasteries that preserved so much of classical
+            learning were also filters—choosing what to copy based on relevance,
+            piety, and available resources. For every text that survived, how
+            many were left to molder, deemed unworthy of the precious parchment?
+          </p>
+
+          <h2 class="font-serif text-2xl text-amber-50 mt-10 mb-4">
+            Fragments and Echoes
+          </h2>
+
+          <p class="text-stone-300 leading-relaxed mb-6">
+            The pre-Socratic philosophers exist now only as fragments—quotations
+            in later authors, often preserved precisely because those later
+            authors disagreed with them. Heraclitus, who spoke of the logos and
+            the ever-flowing river of change, survives in roughly 130 cryptic
+            fragments. His complete works, which ancient sources suggest ran to
+            multiple volumes, are gone.
+          </p>
+
+          <figure class="my-8">
+            <img
+              src="https://images.unsplash.com/photo-1473177027534-53d906e9abcf?w=800&h=450&fit=crop"
+              alt="Ancient scrolls"
+              class="w-full sepia-[.2] opacity-90"
+            />
+            <figcaption
+              class="font-mono text-xs text-stone-500 mt-3 text-center"
+            >
+              Fig. 2: Carbonized scrolls from Herculaneum, currently being
+              decoded with X-ray tomography
+            </figcaption>
+          </figure>
+
+          <p class="text-stone-300 leading-relaxed mb-6">
+            Yet perhaps this loss contains its own wisdom. The fragments force
+            us to think, to interpret, to complete the thought ourselves. They
+            become koans rather than doctrines, invitations to philosophy rather
+            than closed systems. In the spaces between the surviving words, we
+            find room for our own understanding.
+          </p>
+
+          <!-- Tags -->
+          <div class="mt-12 pt-8 border-t border-stone-800">
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="font-mono text-[10px] tracking-wider text-stone-500 uppercase mr-2"
+                >Topics:</span
+              >
+              <a
+                href="#"
+                class="font-mono text-xs border border-stone-700 text-stone-400 hover:border-amber-700 hover:text-amber-500 px-2 py-1 transition-colors"
+                >Philosophy</a
+              >
+              <a
+                href="#"
+                class="font-mono text-xs border border-stone-700 text-stone-400 hover:border-amber-700 hover:text-amber-500 px-2 py-1 transition-colors"
+                >History</a
+              >
+              <a
+                href="#"
+                class="font-mono text-xs border border-stone-700 text-stone-400 hover:border-amber-700 hover:text-amber-500 px-2 py-1 transition-colors"
+                >Libraries</a
+              >
+              <a
+                href="#"
+                class="font-mono text-xs border border-stone-700 text-stone-400 hover:border-amber-700 hover:text-amber-500 px-2 py-1 transition-colors"
+                >Ancient World</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Related Archives -->
+        <aside class="mt-16 pt-12 border-t border-stone-800">
+          <h3 class="font-serif text-2xl text-amber-50 mb-8 text-center">
+            Related Archives
+          </h3>
+          <div class="grid md:grid-cols-2 gap-6">
+            <a href="#" class="flex gap-4 group">
+              <img
+                src="https://images.unsplash.com/photo-1526243741027-444d633d7365?w=120&h=120&fit=crop"
+                alt="Related post"
+                class="w-24 h-24 object-cover sepia-[.25] opacity-80 group-hover:opacity-100 transition-opacity"
+              />
+              <div>
+                <span
+                  class="font-mono text-[10px] tracking-wider text-stone-500 uppercase"
+                  >Oct 18 • Writing</span
+                >
+                <h4
+                  class="font-serif text-amber-50 group-hover:text-amber-500 transition-colors mt-1"
+                >
+                  The Art of Marginalia
+                </h4>
+              </div>
+            </a>
+            <a href="#" class="flex gap-4 group">
+              <img
+                src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=120&h=120&fit=crop"
+                alt="Related post"
+                class="w-24 h-24 object-cover sepia-[.25] opacity-80 group-hover:opacity-100 transition-opacity"
+              />
+              <div>
+                <span
+                  class="font-mono text-[10px] tracking-wider text-stone-500 uppercase"
+                  >Oct 05 • Philosophy</span
+                >
+                <h4
+                  class="font-serif text-amber-50 group-hover:text-amber-500 transition-colors mt-1"
+                >
+                  Stoic Wisdom for Modern Times
+                </h4>
+              </div>
+            </a>
+          </div>
+        </aside>
+      </article>
+    </section>
+
+    <!-- ==================== LOGIN / SIGNUP PAGE ==================== -->
+    <section id="login" class="py-16 border-t border-stone-800">
+      <div class="max-w-md mx-auto px-4">
+        <div class="bg-stone-900 border border-stone-800 p-8">
+          <!-- Header -->
+          <div class="text-center mb-8">
+            <div
+              class="inline-flex items-center justify-center w-16 h-16 border border-amber-700 mb-4"
+            >
+              <i data-lucide="key" class="w-8 h-8 text-amber-600"></i>
+            </div>
+            <h2 class="font-serif text-2xl text-amber-50">Membership Access</h2>
+            <p class="font-mono text-xs text-stone-500 mt-2 tracking-wider">
+              ENTER YOUR CREDENTIALS
+            </p>
+          </div>
+
+          <!-- Tabs -->
+          <div class="flex border-b border-stone-700 mb-6">
+            <button
+              class="flex-1 py-3 font-mono text-xs tracking-wider text-amber-600 border-b-2 border-amber-600"
+            >
+              SIGN IN
+            </button>
+            <button
+              class="flex-1 py-3 font-mono text-xs tracking-wider text-stone-500 hover:text-stone-300 transition-colors"
+            >
+              REGISTER
+            </button>
+          </div>
+
+          <!-- Form -->
+          <form class="space-y-6">
+            <div>
+              <label
+                class="block font-mono text-[10px] tracking-wider text-stone-500 uppercase mb-2"
+                >Email Address</label
+              >
+              <input
+                type="email"
+                placeholder="scholar@archive.edu"
+                class="w-full bg-stone-950 border border-stone-700 text-stone-300 px-4 py-3 font-mono text-sm focus:border-amber-700 focus:outline-none transition-colors placeholder:text-stone-600"
+              />
+            </div>
+            <div>
+              <label
+                class="block font-mono text-[10px] tracking-wider text-stone-500 uppercase mb-2"
+                >Password</label
+              >
+              <input
+                type="password"
+                placeholder="••••••••••••"
+                class="w-full bg-stone-950 border border-stone-700 text-stone-300 px-4 py-3 font-mono text-sm focus:border-amber-700 focus:outline-none transition-colors placeholder:text-stone-600"
+              />
+            </div>
+            <div class="flex items-center justify-between">
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input
+                  type="checkbox"
+                  class="w-4 h-4 bg-stone-950 border border-stone-700 accent-amber-700"
+                />
+                <span class="font-mono text-xs text-stone-500"
+                  >Remember me</span
+                >
+              </label>
+              <a
+                href="#"
+                class="font-mono text-xs text-amber-600 hover:text-amber-500 transition-colors"
+                >Forgot password?</a
+              >
+            </div>
+            <button
+              type="submit"
+              class="w-full bg-amber-700 hover:bg-amber-600 text-stone-950 font-mono text-xs tracking-widest uppercase py-4 transition-colors"
+            >
+              Enter the Archive
+            </button>
+          </form>
+
+          <!-- Divider -->
+          <div class="flex items-center gap-4 my-8">
+            <span class="flex-1 h-px bg-stone-700"></span>
+            <span class="font-mono text-[10px] text-stone-600"
+              >OR CONTINUE WITH</span
+            >
+            <span class="flex-1 h-px bg-stone-700"></span>
+          </div>
+
+          <!-- Social Login -->
+          <div class="grid grid-cols-2 gap-4">
+            <button
+              class="flex items-center justify-center gap-2 border border-stone-700 hover:border-amber-700 py-3 transition-colors"
+            >
+              <i data-lucide="github" class="w-4 h-4 text-stone-400"></i>
+              <span class="font-mono text-xs text-stone-400">GitHub</span>
+            </button>
+            <button
+              class="flex items-center justify-center gap-2 border border-stone-700 hover:border-amber-700 py-3 transition-colors"
+            >
+              <i data-lucide="mail" class="w-4 h-4 text-stone-400"></i>
+              <span class="font-mono text-xs text-stone-400">Google</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== DASHBOARD UI ==================== -->
+    <section id="dashboard" class="py-16 border-t border-stone-800">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="flex gap-6">
+          <!-- Sidebar -->
+          <aside class="hidden md:block w-64 shrink-0">
+            <div class="bg-stone-900 border border-stone-800 p-6 sticky top-24">
+              <!-- User Info -->
+              <div
+                class="flex items-center gap-3 mb-8 pb-6 border-b border-stone-700"
+              >
+                <div
+                  class="w-12 h-12 bg-stone-800 border border-stone-700 flex items-center justify-center"
+                >
+                  <span class="font-serif text-lg text-amber-600">ST</span>
+                </div>
+                <div>
+                  <div class="font-serif text-amber-50">Sebastian Thorne</div>
+                  <div
+                    class="font-mono text-[10px] text-stone-500 tracking-wider"
+                  >
+                    ARCHIVIST
+                  </div>
+                </div>
+              </div>
+
+              <!-- Navigation -->
+              <nav class="space-y-1">
+                <a
+                  href="#"
+                  class="flex items-center gap-3 px-3 py-2 border-l-2 border-amber-600 bg-stone-800/50 text-amber-50"
+                >
+                  <i
+                    data-lucide="layout-dashboard"
+                    class="w-4 h-4 text-amber-600"
+                  ></i>
+                  <span class="font-mono text-xs tracking-wider"
+                    >Dashboard</span
+                  >
+                </a>
+                <a
+                  href="#"
+                  class="flex items-center gap-3 px-3 py-2 border-l-2 border-transparent hover:border-stone-600 hover:bg-stone-800/30 text-stone-400 hover:text-stone-300 transition-colors"
+                >
+                  <i data-lucide="plus-square" class="w-4 h-4"></i>
+                  <span class="font-mono text-xs tracking-wider"
+                    >Create Post</span
+                  >
+                </a>
+                <a
+                  href="#"
+                  class="flex items-center gap-3 px-3 py-2 border-l-2 border-transparent hover:border-stone-600 hover:bg-stone-800/30 text-stone-400 hover:text-stone-300 transition-colors"
+                >
+                  <i data-lucide="folder" class="w-4 h-4"></i>
+                  <span class="font-mono text-xs tracking-wider">Manage</span>
+                </a>
+                <a
+                  href="#"
+                  class="flex items-center gap-3 px-3 py-2 border-l-2 border-transparent hover:border-stone-600 hover:bg-stone-800/30 text-stone-400 hover:text-stone-300 transition-colors"
+                >
+                  <i data-lucide="upload" class="w-4 h-4"></i>
+                  <span class="font-mono text-xs tracking-wider">Uploads</span>
+                </a>
+                <a
+                  href="#"
+                  class="flex items-center gap-3 px-3 py-2 border-l-2 border-transparent hover:border-stone-600 hover:bg-stone-800/30 text-stone-400 hover:text-stone-300 transition-colors"
+                >
+                  <i data-lucide="settings" class="w-4 h-4"></i>
+                  <span class="font-mono text-xs tracking-wider">Settings</span>
+                </a>
+              </nav>
+
+              <!-- Stats -->
+              <div class="mt-8 pt-6 border-t border-stone-700 space-y-4">
+                <div>
+                  <div
+                    class="font-mono text-[10px] text-stone-500 uppercase tracking-wider"
+                  >
+                    Total Posts
+                  </div>
+                  <div class="font-serif text-2xl text-amber-50">47</div>
+                </div>
+                <div>
+                  <div
+                    class="font-mono text-[10px] text-stone-500 uppercase tracking-wider"
+                  >
+                    Drafts
+                  </div>
+                  <div class="font-serif text-2xl text-amber-50">12</div>
+                </div>
+                <div>
+                  <div
+                    class="font-mono text-[10px] text-stone-500 uppercase tracking-wider"
+                  >
+                    Views (30d)
+                  </div>
+                  <div class="font-serif text-2xl text-amber-50">8,342</div>
+                </div>
+              </div>
+            </div>
+          </aside>
+
+          <!-- Main Content -->
+          <main class="flex-1">
+            <!-- Dashboard Header -->
+            <div class="flex items-center justify-between mb-8">
+              <div>
+                <h1 class="font-serif text-3xl text-amber-50">
+                  Archive Ledger
+                </h1>
+                <p class="font-mono text-xs text-stone-500 mt-1 tracking-wider">
+                  MANAGE YOUR ENTRIES
+                </p>
+              </div>
+              <button
+                class="inline-flex items-center gap-2 bg-amber-700 hover:bg-amber-600 text-stone-950 font-mono text-xs tracking-widest uppercase px-4 py-2 transition-colors"
+              >
+                <i data-lucide="plus" class="w-4 h-4"></i>
+                New Entry
+              </button>
+            </div>
+
+            <!-- Search and Filters -->
+            <div class="flex flex-col md:flex-row gap-4 mb-6">
+              <div class="flex-1 relative">
+                <input
+                  type="text"
+                  placeholder="Search archives..."
+                  class="w-full bg-stone-900 border border-stone-700 text-stone-300 pl-4 pr-10 py-3 font-mono text-sm focus:border-amber-700 focus:outline-none transition-colors placeholder:text-stone-600"
+                />
+                <i
+                  data-lucide="search"
+                  class="w-4 h-4 text-stone-600 absolute right-3 top-1/2 -translate-y-1/2"
+                ></i>
+              </div>
+              <select
+                class="bg-stone-900 border border-stone-700 text-stone-400 px-4 py-3 font-mono text-xs focus:border-amber-700 focus:outline-none"
+              >
+                <option>All Categories</option>
+                <option>Writing</option>
+                <option>Travel</option>
+                <option>Philosophy</option>
+              </select>
+              <select
+                class="bg-stone-900 border border-stone-700 text-stone-400 px-4 py-3 font-mono text-xs focus:border-amber-700 focus:outline-none"
+              >
+                <option>All Status</option>
+                <option>Published</option>
+                <option>Draft</option>
+              </select>
+            </div>
+
+            <!-- Data Table -->
+            <div class="bg-stone-900 border border-stone-800 overflow-hidden">
+              <table class="w-full">
+                <thead class="bg-stone-800/50">
+                  <tr>
+                    <th
+                      class="text-left font-mono text-[10px] tracking-wider text-stone-500 uppercase px-4 py-3"
+                    >
+                      Title
+                    </th>
+                    <th
+                      class="text-left font-mono text-[10px] tracking-wider text-stone-500 uppercase px-4 py-3 hidden md:table-cell"
+                    >
+                      Category
+                    </th>
+                    <th
+                      class="text-left font-mono text-[10px] tracking-wider text-stone-500 uppercase px-4 py-3 hidden lg:table-cell"
+                    >
+                      Date
+                    </th>
+                    <th
+                      class="text-left font-mono text-[10px] tracking-wider text-stone-500 uppercase px-4 py-3"
+                    >
+                      Status
+                    </th>
+                    <th
+                      class="text-right font-mono text-[10px] tracking-wider text-stone-500 uppercase px-4 py-3"
+                    >
+                      Actions
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-stone-800">
+                  <tr class="hover:bg-stone-800/30 transition-colors">
+                    <td class="px-4 py-4">
+                      <span class="font-serif text-amber-50"
+                        >On the Nature of Forgotten Knowledge</span
+                      >
+                    </td>
+                    <td class="px-4 py-4 hidden md:table-cell">
+                      <span class="font-mono text-xs text-stone-400"
+                        >Philosophy</span
+                      >
+                    </td>
+                    <td class="px-4 py-4 hidden lg:table-cell">
+                      <span class="font-mono text-xs text-stone-500"
+                        >Nov 24, 2024</span
+                      >
+                    </td>
+                    <td class="px-4 py-4">
+                      <span
+                        class="inline-block font-mono text-[10px] tracking-wider bg-green-900/50 text-green-400 px-2 py-1 border border-green-800"
+                        >PUBLISHED</span
+                      >
+                    </td>
+                    <td class="px-4 py-4 text-right">
+                      <div class="flex items-center justify-end gap-2">
+                        <button
+                          class="p-2 text-stone-500 hover:text-amber-500 transition-colors"
+                        >
+                          <i data-lucide="edit-3" class="w-4 h-4"></i>
+                        </button>
+                        <button
+                          class="p-2 text-stone-500 hover:text-red-500 transition-colors"
+                        >
+                          <i data-lucide="trash-2" class="w-4 h-4"></i>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-stone-800/30 transition-colors">
+                    <td class="px-4 py-4">
+                      <span class="font-serif text-amber-50"
+                        >Wandering Through the Scottish Highlands</span
+                      >
+                    </td>
+                    <td class="px-4 py-4 hidden md:table-cell">
+                      <span class="font-mono text-xs text-stone-400"
+                        >Travel</span
+                      >
+                    </td>
+                    <td class="px-4 py-4 hidden lg:table-cell">
+                      <span class="font-mono text-xs text-stone-500"
+                        >Nov 18, 2024</span
+                      >
+                    </td>
+                    <td class="px-4 py-4">
+                      <span
+                        class="inline-block font-mono text-[10px] tracking-wider bg-green-900/50 text-green-400 px-2 py-1 border border-green-800"
+                        >PUBLISHED</span
+                      >
+                    </td>
+                    <td class="px-4 py-4 text-right">
+                      <div class="flex items-center justify-end gap-2">
+                        <button
+                          class="p-2 text-stone-500 hover:text-amber-500 transition-colors"
+                        >
+                          <i data-lucide="edit-3" class="w-4 h-4"></i>
+                        </button>
+                        <button
+                          class="p-2 text-stone-500 hover:text-red-500 transition-colors"
+                        >
+                          <i data-lucide="trash-2" class="w-4 h-4"></i>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-stone-800/30 transition-colors">
+                    <td class="px-4 py-4">
+                      <span class="font-serif text-amber-50"
+                        >The Architecture of Memory Palaces</span
+                      >
+                    </td>
+                    <td class="px-4 py-4 hidden md:table-cell">
+                      <span class="font-mono text-xs text-stone-400"
+                        >Writing</span
+                      >
+                    </td>
+                    <td class="px-4 py-4 hidden lg:table-cell">
+                      <span class="font-mono text-xs text-stone-500"
+                        >Nov 10, 2024</span
+                      >
+                    </td>
+                    <td class="px-4 py-4">
+                      <span
+                        class="inline-block font-mono text-[10px] tracking-wider bg-yellow-900/50 text-yellow-400 px-2 py-1 border border-yellow-800"
+                        >DRAFT</span
+                      >
+                    </td>
+                    <td class="px-4 py-4 text-right">
+                      <div class="flex items-center justify-end gap-2">
+                        <button
+                          class="p-2 text-stone-500 hover:text-amber-500 transition-colors"
+                        >
+                          <i data-lucide="edit-3" class="w-4 h-4"></i>
+                        </button>
+                        <button
+                          class="p-2 text-stone-500 hover:text-red-500 transition-colors"
+                        >
+                          <i data-lucide="trash-2" class="w-4 h-4"></i>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-stone-800/30 transition-colors">
+                    <td class="px-4 py-4">
+                      <span class="font-serif text-amber-50"
+                        >Notes from the Bodleian</span
+                      >
+                    </td>
+                    <td class="px-4 py-4 hidden md:table-cell">
+                      <span class="font-mono text-xs text-stone-400"
+                        >Travel</span
+                      >
+                    </td>
+                    <td class="px-4 py-4 hidden lg:table-cell">
+                      <span class="font-mono text-xs text-stone-500"
+                        >Nov 05, 2024</span
+                      >
+                    </td>
+                    <td class="px-4 py-4">
+                      <span
+                        class="inline-block font-mono text-[10px] tracking-wider bg-yellow-900/50 text-yellow-400 px-2 py-1 border border-yellow-800"
+                        >DRAFT</span
+                      >
+                    </td>
+                    <td class="px-4 py-4 text-right">
+                      <div class="flex items-center justify-end gap-2">
+                        <button
+                          class="p-2 text-stone-500 hover:text-amber-500 transition-colors"
+                        >
+                          <i data-lucide="edit-3" class="w-4 h-4"></i>
+                        </button>
+                        <button
+                          class="p-2 text-stone-500 hover:text-red-500 transition-colors"
+                        >
+                          <i data-lucide="trash-2" class="w-4 h-4"></i>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Table Pagination -->
+            <div class="flex items-center justify-between mt-4">
+              <span class="font-mono text-xs text-stone-500"
+                >Showing 1-4 of 47 entries</span
+              >
+              <div class="flex items-center gap-2">
+                <button
+                  class="p-2 border border-stone-700 text-stone-500 hover:border-amber-700 hover:text-amber-500 transition-colors"
+                >
+                  <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                </button>
+                <button
+                  class="p-2 border border-stone-700 text-stone-500 hover:border-amber-700 hover:text-amber-500 transition-colors"
+                >
+                  <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                </button>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CREATE/EDIT POST UI ==================== -->
+    <section id="create-post" class="py-16 border-t border-stone-800">
+      <div class="max-w-4xl mx-auto px-4">
+        <div class="flex items-center justify-between mb-8">
+          <div>
+            <h1 class="font-serif text-3xl text-amber-50">New Entry</h1>
+            <p class="font-mono text-xs text-stone-500 mt-1 tracking-wider">
+              ADD TO THE ARCHIVE
+            </p>
+          </div>
+          <div class="flex items-center gap-4">
+            <button
+              class="inline-flex items-center gap-2 border border-stone-600 hover:border-amber-600 text-stone-300 font-mono text-xs tracking-widest uppercase px-4 py-2 transition-colors"
+            >
+              Save Draft
+            </button>
+            <button
+              class="inline-flex items-center gap-2 bg-amber-700 hover:bg-amber-600 text-stone-950 font-mono text-xs tracking-widest uppercase px-4 py-2 transition-colors"
+            >
+              <i data-lucide="send" class="w-4 h-4"></i>
+              Publish
+            </button>
+          </div>
+        </div>
+
+        <div class="space-y-6">
+          <!-- Title Input -->
+          <div>
+            <input
+              type="text"
+              placeholder="Enter your title..."
+              class="w-full bg-transparent border-b border-stone-700 text-amber-50 font-serif text-3xl py-4 focus:border-amber-700 focus:outline-none transition-colors placeholder:text-stone-600"
+            />
+          </div>
+
+          <!-- Meta Options -->
+          <div class="grid md:grid-cols-3 gap-4">
+            <div>
+              <label
+                class="block font-mono text-[10px] tracking-wider text-stone-500 uppercase mb-2"
+                >Category</label
+              >
+              <select
+                class="w-full bg-stone-900 border border-stone-700 text-stone-400 px-4 py-3 font-mono text-sm focus:border-amber-700 focus:outline-none"
+              >
+                <option>Select category...</option>
+                <option>Writing</option>
+                <option>Travel</option>
+                <option>Philosophy</option>
+                <option>Photography</option>
+              </select>
+            </div>
+            <div>
+              <label
+                class="block font-mono text-[10px] tracking-wider text-stone-500 uppercase mb-2"
+                >Date</label
+              >
+              <input
+                type="date"
+                class="w-full bg-stone-900 border border-stone-700 text-stone-400 px-4 py-3 font-mono text-sm focus:border-amber-700 focus:outline-none"
+              />
+            </div>
+            <div>
+              <label
+                class="block font-mono text-[10px] tracking-wider text-stone-500 uppercase mb-2"
+                >Tags</label
+              >
+              <input
+                type="text"
+                placeholder="philosophy, books, history"
+                class="w-full bg-stone-900 border border-stone-700 text-stone-400 px-4 py-3 font-mono text-sm focus:border-amber-700 focus:outline-none placeholder:text-stone-600"
+              />
+            </div>
+          </div>
+
+          <!-- Featured Image Upload -->
+          <div>
+            <label
+              class="block font-mono text-[10px] tracking-wider text-stone-500 uppercase mb-2"
+              >Featured Image</label
+            >
+            <div
+              class="border-2 border-dashed border-stone-700 hover:border-amber-700 transition-colors p-8 text-center cursor-pointer"
+            >
+              <i
+                data-lucide="image-plus"
+                class="w-12 h-12 text-stone-600 mx-auto mb-4"
+              ></i>
+              <p class="font-mono text-sm text-stone-500">
+                Click to upload or drag and drop
+              </p>
+              <p class="font-mono text-xs text-stone-600 mt-1">
+                PNG, JPG up to 10MB
+              </p>
+            </div>
+          </div>
+
+          <!-- Content Textarea -->
+          <div>
+            <label
+              class="block font-mono text-[10px] tracking-wider text-stone-500 uppercase mb-2"
+              >Content</label
+            >
+            <div
+              class="bg-stone-900 border border-stone-700 focus-within:border-amber-700 transition-colors"
+            >
+              <!-- Toolbar -->
+              <div
+                class="flex items-center gap-1 p-2 border-b border-stone-700"
+              >
+                <button
+                  class="p-2 text-stone-500 hover:text-amber-500 transition-colors"
+                  title="Bold"
+                >
+                  <i data-lucide="bold" class="w-4 h-4"></i>
+                </button>
+                <button
+                  class="p-2 text-stone-500 hover:text-amber-500 transition-colors"
+                  title="Italic"
+                >
+                  <i data-lucide="italic" class="w-4 h-4"></i>
+                </button>
+                <span class="w-px h-4 bg-stone-700 mx-1"></span>
+                <button
+                  class="p-2 text-stone-500 hover:text-amber-500 transition-colors"
+                  title="Heading"
+                >
+                  <i data-lucide="heading" class="w-4 h-4"></i>
+                </button>
+                <button
+                  class="p-2 text-stone-500 hover:text-amber-500 transition-colors"
+                  title="Quote"
+                >
+                  <i data-lucide="quote" class="w-4 h-4"></i>
+                </button>
+                <span class="w-px h-4 bg-stone-700 mx-1"></span>
+                <button
+                  class="p-2 text-stone-500 hover:text-amber-500 transition-colors"
+                  title="Link"
+                >
+                  <i data-lucide="link" class="w-4 h-4"></i>
+                </button>
+                <button
+                  class="p-2 text-stone-500 hover:text-amber-500 transition-colors"
+                  title="Image"
+                >
+                  <i data-lucide="image" class="w-4 h-4"></i>
+                </button>
+              </div>
+              <textarea
+                rows="16"
+                placeholder="Begin writing your entry..."
+                class="w-full bg-transparent text-stone-300 font-body text-base leading-relaxed p-4 focus:outline-none resize-none placeholder:text-stone-600"
+              ></textarea>
+            </div>
+          </div>
+
+          <!-- Publishing Options -->
+          <div class="bg-stone-900 border border-stone-800 p-6">
+            <h3 class="font-serif text-lg text-amber-50 mb-4">
+              Publishing Options
+            </h3>
+            <div class="space-y-4">
+              <label class="flex items-center justify-between cursor-pointer">
+                <span class="font-mono text-sm text-stone-400"
+                  >Allow comments</span
+                >
+                <div class="relative">
+                  <input type="checkbox" class="sr-only peer" />
+                  <div
+                    class="w-10 h-5 bg-stone-700 rounded-sm peer-checked:bg-amber-700 transition-colors"
+                  ></div>
+                  <div
+                    class="absolute top-0.5 left-0.5 w-4 h-4 bg-stone-400 rounded-sm peer-checked:translate-x-5 peer-checked:bg-stone-950 transition-all"
+                  ></div>
+                </div>
+              </label>
+              <label class="flex items-center justify-between cursor-pointer">
+                <span class="font-mono text-sm text-stone-400"
+                  >Feature on homepage</span
+                >
+                <div class="relative">
+                  <input type="checkbox" class="sr-only peer" checked />
+                  <div
+                    class="w-10 h-5 bg-stone-700 rounded-sm peer-checked:bg-amber-700 transition-colors"
+                  ></div>
+                  <div
+                    class="absolute top-0.5 left-0.5 w-4 h-4 bg-stone-400 rounded-sm peer-checked:translate-x-5 peer-checked:bg-stone-950 transition-all"
+                  ></div>
+                </div>
+              </label>
+              <label class="flex items-center justify-between cursor-pointer">
+                <span class="font-mono text-sm text-stone-400"
+                  >Enable newsletter notification</span
+                >
+                <div class="relative">
+                  <input type="checkbox" class="sr-only peer" />
+                  <div
+                    class="w-10 h-5 bg-stone-700 rounded-sm peer-checked:bg-amber-700 transition-colors"
+                  ></div>
+                  <div
+                    class="absolute top-0.5 left-0.5 w-4 h-4 bg-stone-400 rounded-sm peer-checked:translate-x-5 peer-checked:bg-stone-950 transition-all"
+                  ></div>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ABOUT PAGE ==================== -->
+    <section id="about" class="py-16 border-t border-stone-800">
+      <div class="max-w-3xl mx-auto px-4">
+        <div class="text-center mb-12">
+          <span
+            class="font-mono text-xs tracking-widest text-amber-600 uppercase"
+            >Curator</span
+          >
+          <h1 class="font-serif text-5xl text-amber-50 mt-4">
+            About the Archivist
+          </h1>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-8 items-start">
+          <div class="md:w-1/3">
+            <div class="p-2 bg-stone-800 border border-stone-700">
+              <img
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop"
+                alt="Author portrait"
+                class="w-full sepia-[.25] grayscale-[.3]"
+              />
+            </div>
+          </div>
+          <div class="md:w-2/3 space-y-6">
+            <p class="drop-cap text-stone-300 leading-relaxed">
+              I am Sebastian Thorne, a wanderer between worlds—both geographical
+              and intellectual. By day, I craft code; by night, I craft
+              sentences. This archive serves as the repository for observations
+              gathered over years of reading, traveling, and thinking perhaps
+              too deeply about things others take for granted.
+            </p>
+            <p class="text-stone-300 leading-relaxed">
+              My interests span the breadth of human inquiry: from the
+              pre-Socratic fragments to contemporary philosophy of mind, from
+              the abandoned monasteries of Ireland to the neon-lit streets of
+              Tokyo. I believe that wisdom is scattered across time and space,
+              waiting to be collected and preserved.
+            </p>
+            <p class="text-stone-300 leading-relaxed">
+              This digital archive is my attempt to create a space where ideas
+              can breathe, where photographs can tell stories, and where the
+              curious reader might find something to ponder during their own
+              quiet hours.
+            </p>
+            <div class="pt-6 flex gap-4">
+              <a
+                href="#"
+                class="text-stone-500 hover:text-amber-500 transition-colors"
+                title="Twitter"
+              >
+                <i data-lucide="twitter" class="w-5 h-5"></i>
+              </a>
+              <a
+                href="#"
+                class="text-stone-500 hover:text-amber-500 transition-colors"
+                title="GitHub"
+              >
+                <i data-lucide="github" class="w-5 h-5"></i>
+              </a>
+              <a
+                href="#"
+                class="text-stone-500 hover:text-amber-500 transition-colors"
+                title="Instagram"
+              >
+                <i data-lucide="instagram" class="w-5 h-5"></i>
+              </a>
+              <a
+                href="mailto:sebastian@thearchive.io"
+                class="text-stone-500 hover:text-amber-500 transition-colors"
+                title="Email"
+              >
+                <i data-lucide="mail" class="w-5 h-5"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT PAGE ==================== -->
+    <section id="contact" class="py-16 border-t border-stone-800">
+      <div class="max-w-3xl mx-auto px-4">
+        <div class="text-center mb-12">
+          <span
+            class="font-mono text-xs tracking-widest text-amber-600 uppercase"
+            >Correspondence</span
+          >
+          <h1 class="font-serif text-5xl text-amber-50 mt-4 mb-6">
+            Send a Letter
+          </h1>
+          <div class="flex items-center justify-center gap-4">
+            <span class="w-24 h-px bg-stone-700"></span>
+            <i data-lucide="feather" class="w-5 h-5 text-amber-600"></i>
+            <span class="w-24 h-px bg-stone-700"></span>
+          </div>
+          <p class="font-body text-stone-400 mt-6 max-w-xl mx-auto">
+            For inquiries, collaborations, or simply to share a thought—the
+            archive welcomes all correspondence from fellow wanderers and
+            seekers.
+          </p>
+        </div>
+
+        <div class="bg-stone-900 border border-stone-800 p-8">
+          <form class="space-y-6">
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label
+                  class="block font-mono text-[10px] tracking-wider text-stone-500 uppercase mb-2"
+                  >Your Name</label
+                >
+                <input
+                  type="text"
+                  placeholder="How shall I address you?"
+                  class="w-full bg-stone-950 border border-stone-700 text-stone-300 px-4 py-3 font-mono text-sm focus:border-amber-700 focus:outline-none transition-colors placeholder:text-stone-600"
+                />
+              </div>
+              <div>
+                <label
+                  class="block font-mono text-[10px] tracking-wider text-stone-500 uppercase mb-2"
+                  >Email Address</label
+                >
+                <input
+                  type="email"
+                  placeholder="For my reply"
+                  class="w-full bg-stone-950 border border-stone-700 text-stone-300 px-4 py-3 font-mono text-sm focus:border-amber-700 focus:outline-none transition-colors placeholder:text-stone-600"
+                />
+              </div>
+            </div>
+            <div>
+              <label
+                class="block font-mono text-[10px] tracking-wider text-stone-500 uppercase mb-2"
+                >Subject</label
+              >
+              <input
+                type="text"
+                placeholder="The nature of your inquiry"
+                class="w-full bg-stone-950 border border-stone-700 text-stone-300 px-4 py-3 font-mono text-sm focus:border-amber-700 focus:outline-none transition-colors placeholder:text-stone-600"
+              />
+            </div>
+            <div>
+              <label
+                class="block font-mono text-[10px] tracking-wider text-stone-500 uppercase mb-2"
+                >Your Message</label
+              >
+              <textarea
+                rows="8"
+                placeholder="Write your thoughts here..."
+                class="w-full bg-stone-950 border border-stone-700 text-stone-300 px-4 py-3 font-body text-sm leading-relaxed focus:border-amber-700 focus:outline-none transition-colors resize-none placeholder:text-stone-600"
+              ></textarea>
+            </div>
+            <div class="flex items-center justify-between pt-4">
+              <p class="font-mono text-xs text-stone-500">
+                <i data-lucide="lock" class="w-3 h-3 inline mr-1"></i>
+                Your message is encrypted in transit
+              </p>
+              <button
+                type="submit"
+                class="inline-flex items-center gap-2 bg-amber-700 hover:bg-amber-600 text-stone-950 font-mono text-xs tracking-widest uppercase px-6 py-3 transition-colors"
+              >
+                <i data-lucide="send" class="w-4 h-4"></i>
+                Send Letter
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Alternative Contact -->
+        <div class="mt-12 text-center">
+          <p class="font-mono text-xs text-stone-500 mb-6 tracking-wider">
+            OR REACH ME DIRECTLY
+          </p>
+          <div
+            class="flex flex-col md:flex-row items-center justify-center gap-8"
+          >
+            <a
+              href="mailto:sebastian@thearchive.io"
+              class="flex items-center gap-3 text-stone-400 hover:text-amber-500 transition-colors"
+            >
+              <i data-lucide="mail" class="w-5 h-5 text-amber-600"></i>
+              <span class="font-mono text-sm">sebastian@thearchive.io</span>
+            </a>
+            <a
+              href="#"
+              class="flex items-center gap-3 text-stone-400 hover:text-amber-500 transition-colors"
+            >
+              <i data-lucide="map-pin" class="w-5 h-5 text-amber-600"></i>
+              <span class="font-mono text-sm">Oxford, United Kingdom</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== NEWSLETTER ==================== -->
+    <section class="py-16 border-t border-stone-800 bg-stone-900/50">
+      <div class="max-w-3xl mx-auto px-4 text-center">
+        <div
+          class="inline-flex items-center justify-center w-16 h-16 border border-amber-700 mb-6"
+        >
+          <i data-lucide="scroll-text" class="w-8 h-8 text-amber-600"></i>
+        </div>
+        <h2 class="font-serif text-3xl text-amber-50 mb-4">
+          Subscribe to the Archives
+        </h2>
+        <p class="font-body text-stone-400 mb-8 max-w-lg mx-auto">
+          Receive occasional letters containing new entries, reflections, and
+          curated recommendations. No more than twice monthly.
+        </p>
+        <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+          <input
+            type="email"
+            placeholder="your.email@example.com"
+            class="flex-1 bg-stone-950 border border-stone-700 text-stone-300 px-4 py-3 font-mono text-sm focus:border-amber-700 focus:outline-none transition-colors placeholder:text-stone-600"
+          />
+          <button
+            type="submit"
+            class="bg-amber-700 hover:bg-amber-600 text-stone-950 font-mono text-xs tracking-widest uppercase px-6 py-3 transition-colors whitespace-nowrap"
+          >
+            Subscribe
+          </button>
+        </form>
+        <p class="font-mono text-[10px] text-stone-600 mt-4 tracking-wider">
+          NO SPAM. UNSUBSCRIBE ANYTIME.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="py-16 border-t border-stone-800">
+      <div class="max-w-5xl mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-12 mb-12">
+          <!-- Brand Column -->
+          <div class="md:col-span-2">
+            <a
+              href="#"
+              class="font-serif text-2xl text-amber-50 tracking-wide hover:text-amber-500 transition-colors"
+            >
+              <span class="text-amber-600">§</span> The Archive
+            </a>
+            <p class="font-body text-stone-500 mt-4 leading-relaxed">
+              A digital repository of thoughts, photographs, and wanderings.
+              Exploring philosophy, code, and art since 2024.
+            </p>
+            <div class="flex gap-4 mt-6">
+              <a
+                href="#"
+                class="w-10 h-10 border border-stone-700 flex items-center justify-center text-stone-500 hover:border-amber-700 hover:text-amber-500 transition-colors"
+              >
+                <i data-lucide="twitter" class="w-4 h-4"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 border border-stone-700 flex items-center justify-center text-stone-500 hover:border-amber-700 hover:text-amber-500 transition-colors"
+              >
+                <i data-lucide="github" class="w-4 h-4"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 border border-stone-700 flex items-center justify-center text-stone-500 hover:border-amber-700 hover:text-amber-500 transition-colors"
+              >
+                <i data-lucide="instagram" class="w-4 h-4"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 border border-stone-700 flex items-center justify-center text-stone-500 hover:border-amber-700 hover:text-amber-500 transition-colors"
+              >
+                <i data-lucide="rss" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Navigation Column -->
+          <div>
+            <h4
+              class="font-mono text-xs tracking-widest text-amber-600 uppercase mb-4"
+            >
+              Archives
+            </h4>
+            <nav class="space-y-3">
+              <a
+                href="#writing"
+                class="block font-mono text-sm text-stone-500 hover:text-amber-500 transition-colors"
+                >Writing</a
+              >
+              <a
+                href="#travel"
+                class="block font-mono text-sm text-stone-500 hover:text-amber-500 transition-colors"
+                >Travel Logs</a
+              >
+              <a
+                href="#photography"
+                class="block font-mono text-sm text-stone-500 hover:text-amber-500 transition-colors"
+                >Photography</a
+              >
+              <a
+                href="#"
+                class="block font-mono text-sm text-stone-500 hover:text-amber-500 transition-colors"
+                >Philosophy</a
+              >
+              <a
+                href="#"
+                class="block font-mono text-sm text-stone-500 hover:text-amber-500 transition-colors"
+                >All Entries</a
+              >
+            </nav>
+          </div>
+
+          <!-- Info Column -->
+          <div>
+            <h4
+              class="font-mono text-xs tracking-widest text-amber-600 uppercase mb-4"
+            >
+              Information
+            </h4>
+            <nav class="space-y-3">
+              <a
+                href="#about"
+                class="block font-mono text-sm text-stone-500 hover:text-amber-500 transition-colors"
+                >About</a
+              >
+              <a
+                href="#contact"
+                class="block font-mono text-sm text-stone-500 hover:text-amber-500 transition-colors"
+                >Contact</a
+              >
+              <a
+                href="#"
+                class="block font-mono text-sm text-stone-500 hover:text-amber-500 transition-colors"
+                >Privacy Policy</a
+              >
+              <a
+                href="#"
+                class="block font-mono text-sm text-stone-500 hover:text-amber-500 transition-colors"
+                >Terms of Use</a
+              >
+              <a
+                href="#"
+                class="block font-mono text-sm text-stone-500 hover:text-amber-500 transition-colors"
+                >RSS Feed</a
+              >
+            </nav>
+          </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div
+          class="pt-8 border-t border-stone-800 flex flex-col md:flex-row items-center justify-between gap-4"
+        >
+          <p class="font-mono text-xs text-stone-600 tracking-wider">
+            © 2024 THE DARK ARCHIVE. ALL RIGHTS RESERVED.
+          </p>
+          <p class="font-mono text-xs text-stone-700">
+            <span class="text-stone-600">Crafted with</span>
+            <i
+              data-lucide="heart"
+              class="w-3 h-3 inline text-amber-700 mx-1"
+            ></i>
+            <span class="text-stone-600">and</span>
+            <i
+              data-lucide="coffee"
+              class="w-3 h-3 inline text-amber-700 mx-1"
+            ></i>
+            <span class="text-stone-600">in Oxford</span>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ==================== BACK TO TOP ==================== -->
+    <button
+      id="backToTop"
+      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+      class="fixed bottom-8 right-8 w-12 h-12 bg-stone-900 border border-stone-700 text-stone-500 hover:border-amber-700 hover:text-amber-500 transition-colors flex items-center justify-center opacity-0 pointer-events-none"
+      style="transition: opacity 0.3s ease"
+    >
+      <i data-lucide="chevron-up" class="w-5 h-5"></i>
+    </button>
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <script>
+      // Initialize Lucide icons
+      lucide.createIcons();
+
+      // Mobile menu toggle
+      const menuButton = document.querySelector('button[class*="md:hidden"]');
+      const mobileNav = document.querySelector("nav.md\\:hidden");
+
+      if (menuButton && mobileNav) {
+        menuButton.addEventListener("click", () => {
+          mobileNav.classList.toggle("hidden");
+          const icon = menuButton.querySelector("i");
+          if (mobileNav.classList.contains("hidden")) {
+            icon.setAttribute("data-lucide", "menu");
+          } else {
+            icon.setAttribute("data-lucide", "x");
+          }
+          lucide.createIcons();
+        });
+      }
+
+      // Back to top button visibility
+      const backToTopBtn = document.getElementById("backToTop");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 500) {
+          backToTopBtn.style.opacity = "1";
+          backToTopBtn.style.pointerEvents = "auto";
+        } else {
+          backToTopBtn.style.opacity = "0";
+          backToTopBtn.style.pointerEvents = "none";
+        }
+      });
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          const href = this.getAttribute("href");
+          if (href !== "#") {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+              target.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+              // Close mobile menu if open
+              if (mobileNav && !mobileNav.classList.contains("hidden")) {
+                mobileNav.classList.add("hidden");
+                const icon = menuButton.querySelector("i");
+                icon.setAttribute("data-lucide", "menu");
+                lucide.createIcons();
+              }
+            }
+          }
+        });
+      });
+
+      // Login/Register tab switching
+      const tabButtons = document.querySelectorAll(
+        "#login .flex.border-b button",
+      );
+      tabButtons.forEach((button, index) => {
+        button.addEventListener("click", () => {
+          tabButtons.forEach((btn) => {
+            btn.classList.remove(
+              "text-amber-600",
+              "border-b-2",
+              "border-amber-600",
+            );
+            btn.classList.add("text-stone-500");
+          });
+          button.classList.remove("text-stone-500");
+          button.classList.add(
+            "text-amber-600",
+            "border-b-2",
+            "border-amber-600",
+          );
+        });
+      });
+    </script>
+  </body>
+</html>
